@@ -12,7 +12,7 @@ class Library
       end
     end
   end
-
+  
   def get_rental_details_by_title(title)
     for book_hash in @books
       if book_hash[:title] == title
@@ -20,11 +20,11 @@ class Library
       end
     end
   end
-
-  def add_book_by_title(title)
-    @books.push(title)
-    @books[:rental_details] => {:student_name => "", :date => ""}
-    end
-  end
+  #
+  # def add_book_by_title(title)
+  #   @books.push(title)
+  #   @books[:rental_details] => {:student_name => "", :date => ""}
+  #   end
+  # end
 
 end
