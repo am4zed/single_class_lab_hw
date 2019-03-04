@@ -10,7 +10,7 @@ end
 
 #3
 def add_or_remove_cash(pet_shop, value)
-  return pet_shop[:admin][:total_cash] += value
+  pet_shop[:admin][:total_cash] += value
 end
 
 #4
@@ -34,7 +34,9 @@ end
 #8
 def pets_by_breed(pet_shop, type)
   pet_type_array = Array.new
-  pet_shop[:pets].each{|hash| pet_type_array.push(hash[:breed]) if hash[:breed] == type }
+  pet_shop[:pets].each{
+    |hash| pet_type_array.push(hash[:breed]) if hash[:breed] == type
+  }
   return pet_type_array
 end
 
@@ -43,7 +45,9 @@ end
 
 #10
 def find_pet_by_name(pet_shop, name)
-  pet_shop[:pets].each{|hash| return pet_shop[:pets][pet_shop[:pets].index(hash)] if hash[:name] == name }
+  pet_shop[:pets].each{
+    |pet| return pet if pet[:name] == name
+  }
   return nil
 end
 
@@ -52,7 +56,7 @@ end
 
 #12
 def remove_pet_by_name(pet_shop, name)
-      pet_shop[:pets].each{|hash| pet_shop[:pets].delete_at(pet_shop[:pets].index(hash)) if hash[:name] == name}
+      pet_shop[:pets].each{|hash| pet_shop[:pets].delete(hash) if hash[:name] == name}
 end
 
 #13
