@@ -3,7 +3,6 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../Extension')
 
-
 class TestLibrary < MiniTest::Test
 
   def setup
@@ -31,7 +30,6 @@ class TestLibrary < MiniTest::Test
         }
       }
     ]
-
   end
 
 
@@ -44,6 +42,23 @@ class TestLibrary < MiniTest::Test
         student_name: "Clive Johnson",
         date: "05/05/18"
       }
-      } , book )
-    end
+      }, book)
   end
+
+# def test_get_rental_details_by_title
+#   library = Library.new(@books)
+#   book = library.get_rental_details_by_title("Catcher_in_the_rye")
+#   assert_equal("{
+#     student_name: "John Jonsen",
+#     date: "05/05/18"
+#     }", book )
+# end
+#
+def add_book_by_title
+  library = Library.new(@books)
+  new_book = library.add_book_by_title("Birdsong")
+  assert_equal(true, new_book.include?)
+end
+
+
+end
